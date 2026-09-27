@@ -180,7 +180,11 @@ Explore the comprehensive technical design and domain documentation:
 
 ## 📸 Screenshots & Previews
 
-For a comprehensive interface walkthrough and visual catalog of the public portal, faculty directory, and admin ERP console, refer to **[`screenshots/README.md`](screenshots/README.md)**.
+<p align="center">
+  <img src="screenshots/web-landing-hero.png" alt="Dr. YSP University Web Platform Preview" width="850" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" />
+</p>
+
+Full catalog of live platform and interface previews: **[`screenshots/README.md`](screenshots/README.md)**.
 
 ---
 

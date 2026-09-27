@@ -1,49 +1,79 @@
-# 📸 Dr. YSP University — Screenshots & Interface Previews
+# 📸 Interface & Workflow Previews
 
-This directory catalogs the user interface previews, architectural flows, and administrative console views of the YSP University platform ([https://uhf.ac.in/](https://uhf.ac.in/)).
-
----
-
-## 🖥️ Public Institutional Portal
-
-### 1. University Landing Page
-- Modern university hero header with multi-tiered navigation (About Us, Admissions, Academics, Research, Extension Education, Resources, Tenders, Vacancies, NIRF).
-- Dynamic sliding ticker for recent academic and administrative notices.
-- Direct quick links for Students, Alumni, Library, Farmers, Virtual Tour, Linkages & MOUs.
-
-### 2. Multi-College Department & Faculty Roster
-- College of Horticulture and Forestry subpages (e.g. Thunag campus `cohft-facu`).
-- Clean grid presentation of faculty members: full name, designation, college, official telephone, fax, email, and high-resolution profile photo.
-- Dynamic rendering powered by `getFaculty($page)` helper.
-
-### 3. Centralized Procurement Tenders & Job Vacancies
-- Clean tabular view of active tenders and job recruitments.
-- Dynamic date-filtered list preventing expired notices from displaying.
-- Instant PDF download links for official tender specifications and application forms.
+This directory catalogs the visual layouts, design systems, and public interfaces of the Dr. YSP University Web Portal and Faculty ERP platform ([https://uhf.ac.in/](https://uhf.ac.in/)).
 
 ---
 
-## 👨‍🏫 Faculty Self-Service Portal
+## 1. Public Institutional Web Portal
 
-### 1. Asynchronous Email Verification & OTP Onboarding (`/emp-register`)
-- Clean, responsive registration form with institutional email verification.
-- Two-step interactive OTP button flow with live Toastr notification toasts.
+### 1.1 Institutional Landing Page & Hero (`/`)
+*Modern responsive landing page featuring multi-campus navigation, quick access links for Students, Farmers, Library, dynamic notice tickers, and event showcases.*
 
-### 2. Faculty Profile Management Console (`/employee/profile`)
-- Form to edit biographical data, academic discipline, research specialization, and mission statement.
-- Avatar and curriculum vitae document upload dropzones.
+<p align="center">
+  <img src="web-landing-hero.png" alt="YSP University Landing Page" width="900" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" />
+</p>
 
 ---
 
-## 🏢 Super Admin Governance Console
+### 1.2 About the University & Governance (`/About-University.html`)
+*Institutional profile, Vice-Chancellor's Desk, research mandates, mission objectives, and campus location directories.*
 
-### 1. Central Administrative Faculty Management (`/admin/faculty`)
-- Integrated DataTables view with multi-column sorting and live search.
-- Dynamic page dropdown mapping to link faculty to specific departmental templates.
-- One-click AJAX button toggling for Active / Deactivate states.
+<p align="center">
+  <img src="web-about-university.png" alt="About University Governance" width="900" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" />
+</p>
 
-### 2. Classified Notice & Tender Publisher (`/admin/notification/{url}`)
-- Modal-based upload interface with section tagging, external URL linking, PDF attachment, and `last_date` calendar picker.
+---
 
-### 3. Dynamic Academic Course Table Manager (`/admin/table/coh-course-table`)
-- Inline table CRUD enabling administrators to add, edit, and update semester course matrices and credit hours.
+### 1.3 Admissions & Academic Catalog (`/Admission-Notice.html`)
+*Comprehensive admissions notices for Undergraduate (B.Sc. Hons), Postgraduate (M.Sc), MBA, Ph.D, and Diploma programs.*
+
+<p align="center">
+  <img src="web-admissions.png" alt="Admissions & Academic Catalog" width="900" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" />
+</p>
+
+---
+
+### 1.4 Procurement Tenders & Statutory Notices (`/Tender-Notice.html`)
+*Centralized procurement notices and bidding documents with automated deadline-based expiration filters and direct PDF downloads.*
+
+<p align="center">
+  <img src="web-tenders-notices.png" alt="Tenders & Public Notices" width="900" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" />
+</p>
+
+---
+
+## 2. Administrative Governance Console (`/admin`)
+
+### 2.1 Centralized Faculty Roster & Moderation (`/admin/faculty`)
+- **Purpose:** Central operational registry displaying all registered faculty members, department associations, contact information, and moderation status.
+- **Key Elements:**
+  - DataTables 1.13 multi-column sorting and instant search.
+  - Dropdown page selector to bind faculty records to dynamic college templates (`cohft-facu`, etc.).
+  - Asynchronous AJAX status toggle buttons (`Active` / `Deactivate`) with live UI feedback.
+
+### 2.2 Classified Circular & Tender Publisher (`/admin/notification/{url}`)
+- **Purpose:** Segregated publishing console for Tenders, Vacancies, NIRF Reports, Farmer's Corner, and Academic Circulars.
+- **Key Elements:**
+  - Modal-based creation interface with document attachment upload (PDF/DOC) and external URL links.
+  - Submission deadline date picker (`last_date`) driving the automated expiration engine.
+
+### 2.3 Dynamic Course Matrix & Table Manager (`/admin/table/coh-course-table`)
+- **Purpose:** Real-time curriculum and syllabus table editor.
+- **Key Elements:**
+  - Inline CRUD interface for course codes, course titles, and credit-hour breakdowns (`3(2+1)`).
+
+---
+
+## 3. Faculty Self-Service Portal (`/employee`)
+
+### 3.1 Domain-Restricted Email & OTP Verification (`/emp-register`)
+- **Purpose:** Secure faculty self-onboarding interface.
+- **Key Elements:**
+  - Institutional domain validation (`@tingebharat.com` / university pattern).
+  - Two-phase interactive OTP dispatch and verification without full-page reloads.
+
+### 3.2 Faculty Profile Management (`/employee/profile`)
+- **Purpose:** Academic profile and credential maintenance workspace.
+- **Key Elements:**
+  - Biographical data, academic discipline, research specialization, and mission statement forms.
+  - Profile avatar and curriculum vitae (PDF) upload dropzones.
